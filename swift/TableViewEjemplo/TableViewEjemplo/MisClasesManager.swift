@@ -16,6 +16,12 @@ class MisClasesManager{
     func leerClase(at indice:Int) -> MiClase {
         return clases[indice]
     }
+    func guardarClase(nuevaClase: MiClase){
+        clases.append(nuevaClase)
+    }
+    func actualizaClase(at indice:Int, with clase: MiClase){
+        clases[indice] = clase
+    }
     
     
     private func CargarClases() -> [MiClase] {

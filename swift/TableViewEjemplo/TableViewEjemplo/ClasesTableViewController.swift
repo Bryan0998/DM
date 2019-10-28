@@ -8,7 +8,19 @@
 
 import UIKit
 
-class ClasesTableViewController: UITableViewController {
+class ClasesTableViewController: UITableViewController, ClasesViewControllerDelegate {
+    func guardarClase(_ clase: MiClase) {
+        
+        if let claseSeleccionada = tableView.indexPathForSelectedRow{
+            cManager.actualizaClase(at: claseSeleccionada.row, with: clase)
+        }
+        else{
+            cManager.guardarClase(nuevaClase: clase)
+        }
+        tableView.reloadData()
+        
+    }
+    
     
     var cManager : MisClasesManager = MisClasesManager()
 
@@ -42,7 +54,7 @@ class ClasesTableViewController: UITableViewController {
 
         // Configure the cell...
         cell.textLabel?.text = "Clase: \(clase.nombre)"
-        cell.detailTextLabel?.text = "Maestro: \(clase.maestro)"
+        cell.detailTextLabel?.text = "Maestro: \(clase.maestro) a las \(clase.hora) en \(clase.aula)"
         
         return cell
     }
@@ -83,14 +95,31 @@ class ClasesTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        
+        if let claseSeleccionada = tableView.indexPathForSelectedRow, let clasesVC = segue.destination as? ClaseViewController{
+            clasesVC.clase = cManager.leerClase(at: claseSeleccionada.row)
+            clasesVC.delegado = self
+        }
+        
+        if let navContro = segue.destination as? UINavigationController
+        {
+            if let claseControl = navContro.topViewController as? ClaseViewController{
+                claseControl.delegado = self
+            }
+        }
+        
     }
-    */
+    
 
+}
+
+protocol ClasesViewControllerDelegate{
+    func guardarClase(_ clase: MiClase)
 }
