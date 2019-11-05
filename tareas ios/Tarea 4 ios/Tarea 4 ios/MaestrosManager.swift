@@ -13,6 +13,40 @@ class MaestrosManager{
     
     var numeroMaestros : Int { return maestros.count }
     
+    func facultades() -> [String]{
+        var facultades = [String]()
+        for maestro in maestros{
+            if !facultades.contains(maestro.facultad){
+                facultades.append(maestro.facultad)
+            }
+        }
+        
+        return facultades
+    }
+    
+    func numeroDeMaestros(facultad indice:Int) -> Int{
+        var i=0
+        for maestro in maestros{
+            if maestro.facultad == facultades()[indice]{
+                i+=1
+            }
+        }
+        return i
+    }
+    
+    func maestros(enFacultad indice:Int) -> [Maestro]{
+        var maestrosEnFacultad = [Maestro]()
+        let f=facultades()
+        
+        for maestro in maestros{
+            if maestro.facultad==f[indice]{
+                maestrosEnFacultad.append(maestro)
+            }
+        }
+        
+        return maestrosEnFacultad
+    }
+    
     
     func leerMaestro(at indice:Int) -> Maestro {
         return maestros[indice]
@@ -34,7 +68,9 @@ class MaestrosManager{
     private func maestrosEjemplo() -> [Maestro] {
         let misMaestros = [
             Maestro(nombre: "Katy", sexo: "Femenino", grado: "Mt.", calificacion: 5, facultad: "Sistemas y Computación", carreras: ["Sistemas","TIC´s"], materias: ["POO","Programación II"]),
-            Maestro(nombre: "Barrón", sexo: "Femenino", grado: "Dra.", calificacion: 4, facultad: "Sistemas y Computación", carreras: ["Sistemas","TIC´s"], materias: ["POO","Fundamentos de programación"])
+            Maestro(nombre: "Barrón", sexo: "Femenino", grado: "Dra.", calificacion: 4, facultad: "Sistemas y Computación", carreras: ["Sistemas","TIC´s"], materias: ["POO","Fundamentos de programación"]),
+            Maestro(nombre: "Cabanillas", sexo: "Masculino", grado: "Dr.", calificacion: 5, facultad: "Electrónica", carreras: ["Electrónica"], materias: ["Fundamentos de electrónica"]),
+            Maestro(nombre: "Celia", sexo: "Femenino", grado: "Ing.", calificacion: 4, facultad: "Industrial", carreras: ["Industrial","Gestión empresarial"], materias: ["Cálculo integral","Cálculo diferencial"])
         ]
         
         return misMaestros

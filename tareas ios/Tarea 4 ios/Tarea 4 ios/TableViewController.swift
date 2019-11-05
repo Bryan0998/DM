@@ -15,6 +15,10 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //navigationItem.title = "Maestros"
+        //navigationController?.navigationBar.prefersLargeTitles=true
+        //tableView.register(UITableViewCell.self, forCellReuseIdentifier: "maestroID")
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -26,25 +30,35 @@ class TableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        //let nSecciones = manager.numeroDeSecciones()
-        //return nSecciones
-        return 1
+        let facultades=manager.facultades()
+        
+        return facultades.count
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let label = UILabel()
+        label.text = manager.facultades()[section]
+        label.backgroundColor = UIColor.lightGray
+        label.textColor = UIColor.white
+        label.textAlignment = NSTextAlignment.center
+        return label
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        let rows = manager.numeroMaestros
-        return rows
+        return manager.numeroDeMaestros(facultad: section)
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "maestroID", for: indexPath)
 
-        let maestro = manager.leerMaestro(at: indexPath.row)
+        let maestro = manager.maestros(enFacultad: indexPath.section)[indexPath.row]
 
         // Configure the cell...
+        
         cell.textLabel?.text = "Maestro: \(maestro.nombre)"
+        cell.detailTextLabel?.text = "Carreras: " + maestro.listaDeCarreras()
 
         return cell
     }
