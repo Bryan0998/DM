@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A994B8EF237341C1008DE70A /* MaestrosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A994B8EE237341C1008DE70A /* MaestrosViewController.swift */; };
 		C5829ED32368D65300DAE619 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5829ED22368D65300DAE619 /* AppDelegate.swift */; };
 		C5829ED52368D65300DAE619 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5829ED42368D65300DAE619 /* SceneDelegate.swift */; };
 		C5829ED72368D65300DAE619 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5829ED62368D65300DAE619 /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A994B8EE237341C1008DE70A /* MaestrosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaestrosViewController.swift; sourceTree = "<group>"; };
 		C5829ECF2368D65200DAE619 /* Tarea 4 ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tarea 4 ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5829ED22368D65300DAE619 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5829ED42368D65300DAE619 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				C5829EE62368D76E00DAE619 /* Maestro.swift */,
 				C5829EE82368DB0300DAE619 /* TableViewController.swift */,
 				C5829EEA2368DDAF00DAE619 /* MaestrosManager.swift */,
+				A994B8EE237341C1008DE70A /* MaestrosViewController.swift */,
 			);
 			path = "Tarea 4 ios";
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5829ED72368D65300DAE619 /* ViewController.swift in Sources */,
+				A994B8EF237341C1008DE70A /* MaestrosViewController.swift in Sources */,
 				C5829ED32368D65300DAE619 /* AppDelegate.swift in Sources */,
 				C5829ED52368D65300DAE619 /* SceneDelegate.swift in Sources */,
 				C5829EEB2368DDAF00DAE619 /* MaestrosManager.swift in Sources */,

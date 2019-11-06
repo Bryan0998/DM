@@ -10,7 +10,8 @@ import UIKit
 
 class TableViewController: UITableViewController {
     
-    var manager = MaestrosManager()
+    var manager : MaestrosManager = MaestrosManager()
+    var maestroVC : MaestrosViewController = MaestrosViewController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +59,7 @@ class TableViewController: UITableViewController {
         // Configure the cell...
         
         cell.textLabel?.text = "Maestro: \(maestro.nombre)"
-        cell.detailTextLabel?.text = "Carreras: " + maestro.listaDeCarreras()
+        cell.detailTextLabel?.text = "Carreras: \(maestro.carreras)"
 
         return cell
     }
@@ -108,5 +109,22 @@ class TableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        if let maestroSeleccionado = tableView.indexPathForSelectedRow,
+            let maestrosVC = segue.destination as? MaestrosViewController
+        {
+            maestrosVC.maestros = manager.leerMaestro(at: maestroSeleccionado.row, seccion: maestroSeleccionado.section)
+            maestrosVC.delegado = self
+        }
+            
+        else if let navContro = segue.destination as? UINavigationController,
+            let maestrosControl = navContro.topViewController as? MaestrosViewController
+        {
+            maestrosControl.delegado = self
+        }
+        
+    }
 
 }

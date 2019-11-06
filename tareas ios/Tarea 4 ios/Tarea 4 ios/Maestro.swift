@@ -17,10 +17,10 @@ class Maestro{
     var grado:String
     var calificacion:Int
     var facultad:String
-    var carreras:[String]
-    var materias:[String]
+    var carreras:String
+    var materias:String
     
-    init(nombre:String, sexo:String,grado:String,calificacion:Int,facultad:String,carreras:[String],materias:[String]) {
+    init(nombre:String, sexo:String,grado:String,calificacion:Int,facultad:String,carreras:String,materias:String) {
         Maestro.numeroDeMaestros+=1
         
         self.id=Maestro.numeroDeMaestros
@@ -32,16 +32,5 @@ class Maestro{
         self.carreras = carreras
         self.materias = materias
     }
-    
-    func listaDeCarreras() -> String{
-        var listaCarreras = String()
-        
-        for carrera in carreras{
-            listaCarreras += "\(carrera) - "
-        }
-        
-        return listaCarreras
-    }
-    
     
 }

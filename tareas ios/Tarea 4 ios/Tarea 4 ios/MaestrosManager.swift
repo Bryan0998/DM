@@ -48,8 +48,8 @@ class MaestrosManager{
     }
     
     
-    func leerMaestro(at indice:Int) -> Maestro {
-        return maestros[indice]
+    func leerMaestro(at indice:Int, seccion sec:Int ) -> Maestro {
+        return maestros(enFacultad: sec)[indice]
     }
     func guardarMaestro(nuevoMaestro: Maestro){
         maestros.append(nuevoMaestro)
