@@ -26,6 +26,15 @@ class TableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    func guardarMaestro(_ maestro: Maestro){
+        if let maestroSeleccionado = tableView.indexPathForSelectedRow{
+            manager.actualizaMaestro(at: maestroSeleccionado.row, enFacultad: maestroSeleccionado.section, with: maestro)
+        }else{
+            manager.guardarMaestro(nuevoMaestro: maestro)
+        }
+        tableView.reloadData()
+    }
 
     // MARK: - Table view data source
 
@@ -60,6 +69,13 @@ class TableViewController: UITableViewController {
         
         cell.textLabel?.text = "Maestro: \(maestro.nombre)"
         cell.detailTextLabel?.text = "Carreras: \(maestro.carreras)"
+        
+        if (maestro.sexo == "Masculino"){
+            cell.imageView?.image = UIImage(named: "64")
+        }
+        else{
+            cell.imageView?.image = UIImage(named: "64-1")
+        }
 
         return cell
     }
@@ -73,18 +89,19 @@ class TableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            manager.borrarMaestro(at: indexPath.row,en: indexPath.section)
+            tableView.reloadData()
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
-
+         
+    // override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
     /*
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {

@@ -54,8 +54,22 @@ class MaestrosManager{
     func guardarMaestro(nuevoMaestro: Maestro){
         maestros.append(nuevoMaestro)
     }
-    func actualizaMaestro(at indice:Int, with maestro: Maestro){
-        maestros[indice] = maestro
+    func actualizaMaestro(at indice:Int,enFacultad seccion:Int,  with maestro: Maestro){
+        let id=maestros(enFacultad: seccion)[indice].id
+        for i in 0...(maestros.count-1){
+            if (maestros[i].id==id){
+                maestros[i]=maestro
+            }
+        }
+        
+    }
+    func borrarMaestro(at indice: Int, en seccion:Int){
+        let id=maestros(enFacultad: seccion)[indice].id
+        for i in 0...(maestros.count-1){
+            if (maestros[i].id==id){
+                maestros.remove(at: i)
+            }
+        }
     }
     func numeroDeSecciones() -> Int{
         return 1
@@ -67,10 +81,10 @@ class MaestrosManager{
     
     private func maestrosEjemplo() -> [Maestro] {
         let misMaestros = [
-            Maestro(nombre: "Katy", sexo: "Femenino", grado: "Mt.", calificacion: 5, facultad: "Sistemas y Computación", carreras: ["Sistemas","TIC´s"], materias: ["POO","Programación II"]),
-            Maestro(nombre: "Barrón", sexo: "Femenino", grado: "Dra.", calificacion: 4, facultad: "Sistemas y Computación", carreras: ["Sistemas","TIC´s"], materias: ["POO","Fundamentos de programación"]),
-            Maestro(nombre: "Cabanillas", sexo: "Masculino", grado: "Dr.", calificacion: 5, facultad: "Electrónica", carreras: ["Electrónica"], materias: ["Fundamentos de electrónica"]),
-            Maestro(nombre: "Celia", sexo: "Femenino", grado: "Ing.", calificacion: 4, facultad: "Industrial", carreras: ["Industrial","Gestión empresarial"], materias: ["Cálculo integral","Cálculo diferencial"])
+            Maestro(nombre: "Katy", sexo: "Femenino", grado: "Mt.", calificacion: 5, facultad: "Sistemas y Computación", carreras: "Sistemas - TIC´s", materias: "POO - Programación II"),
+            Maestro(nombre: "Barrón", sexo: "Femenino", grado: "Dra.", calificacion: 4, facultad: "Sistemas y Computación", carreras: "Sistemas - TIC´s", materias: "POO - Fundamentos de programación"),
+            Maestro(nombre: "Cabanillas", sexo: "Masculino", grado: "Dr.", calificacion: 5, facultad: "Electrónica", carreras: "Electrónica", materias: "Fundamentos de electrónica"),
+            Maestro(nombre: "Celia", sexo: "Femenino", grado: "Ing.", calificacion: 4, facultad: "Industrial", carreras: "Industrial - Gestión empresarial", materias: "Cálculo integral - Cálculo diferencial")
         ]
         
         return misMaestros
