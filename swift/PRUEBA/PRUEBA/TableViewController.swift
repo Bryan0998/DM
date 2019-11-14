@@ -1,21 +1,18 @@
 //
 //  TableViewController.swift
-//  Tarea 5 ios
+//  PRUEBA
 //
-//  Created by CCDM19 on 13/11/19.
+//  Created by CCDM19 on 14/11/19.
 //  Copyright © 2019 Coppel. All rights reserved.
 //
 
 import UIKit
 
 class TableViewController: UITableViewController {
-    
-    var managerdb:SqliteDbStore=SqliteDbStore()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -32,33 +29,15 @@ class TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 2
+        return 10
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CELLID", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "1234", for: indexPath)
 
         // Configure the cell...
-        var x:String = "hola"
-        var y:String="hola"
-        var z:String="hola"
-        do{
-            if managerdb.database.open(){
-                let rs = try managerdb.database.executeQuery("select nombre, tienda, costo from Producto", values: nil)
-                while rs.next() {
-                    x = rs.string(forColumn: "nombre")!
-                    y = rs.string(forColumn: "tienda")!
-                    z = rs.string(forColumn: "costo")!
-                }
-                managerdb.database.close()
-            }
-        }
-        catch{
-            print("No")
-        }
-        cell.textLabel?.text="nombre = \(x) tienda = \(y) costo = \(z)"
-        //cell.textLabel?.text="hola"
+        cell.textLabel?.text="hello"
         return cell
     }
     

@@ -19,11 +19,13 @@ class SqliteDbStore {
     {
         let fileURL = try! FileManager.default
             .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-            .appendingPathComponent("test.sqlite")
+            .appendingPathComponent("Wishlist.sqlite")
+        
         let database = FMDatabase(url: fileURL)
         self.fileURL=fileURL
         self.database=database
         crearTabla()
+        
     }
     func open() -> Bool{
         return database.open()
@@ -31,7 +33,7 @@ class SqliteDbStore {
     func crearTabla() -> Bool{
         var b=true
         if open(){
-            let createStatement = "crate table if not exists Producto(nombre text primary key not null, tienda text not null, costo real not null, grado integer not null, explicacion text not null)"
+            let createStatement = "create table if not exists Producto (nombre text primary key not null, tienda text not null, costo real not null, grado integer not null, explicacion text not null)"
             do{
                 try database.executeUpdate(createStatement, values: nil)
                 print("Tabla creada")
@@ -39,14 +41,28 @@ class SqliteDbStore {
             catch{
                 print("error al crear la tabla")
             }
+            database.close()
         }
         else{
             b=false
         }
         return b
     }
-    
-    
+    func inserta(){
+        if database.open(){
+            let insert="INSERT INTO Producto (nombre,tienda,costo,grado,explicacion) VALUES (?,?,?,?,?)"
+            
+            do{
+                try database.executeUpdate(insert, values: ["audifonos","Sears",500.0,5,"Los quiero y punto."])
+            }
+            catch{
+                print("No insertó")
+            }
+            
+            database.close()
+        }
+
+    }
     
     
 }
