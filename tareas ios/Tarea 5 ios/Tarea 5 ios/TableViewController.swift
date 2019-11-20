@@ -9,18 +9,28 @@
 import UIKit
 
 class TableViewController: UITableViewController {
-    
-    var managerdb:SqliteDbStore=SqliteDbStore()
 
+    var manager:ManagerProductos=ManagerProductos()
+    var formulario:FormularioViewController=FormularioViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        manager=ManagerProductos()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    func guardarProducto(_ producto: Producto){
+        if let productoSeleccionado = tableView.indexPathForSelectedRow{
+            manager.actualiza(Producto: producto)
+        }else{
+            manager.insert(producto: producto)
+        }
+        manager=ManagerProductos()
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source
@@ -32,7 +42,7 @@ class TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 2
+        return manager.getProductos().count
     }
 
     
@@ -40,24 +50,12 @@ class TableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CELLID", for: indexPath)
 
         // Configure the cell...
-        var x:String = "hola"
-        var y:String="hola"
-        var z:String="hola"
-        do{
-            if managerdb.database.open(){
-                let rs = try managerdb.database.executeQuery("select nombre, tienda, costo from Producto", values: nil)
-                while rs.next() {
-                    x = rs.string(forColumn: "nombre")!
-                    y = rs.string(forColumn: "tienda")!
-                    z = rs.string(forColumn: "costo")!
-                }
-                managerdb.database.close()
-            }
-        }
-        catch{
-            print("No")
-        }
-        cell.textLabel?.text="nombre = \(x) tienda = \(y) costo = \(z)"
+        let producto=manager.getProducto(at: indexPath.row)
+        
+        
+        cell.textLabel?.text=producto.nombre
+        cell.detailTextLabel?.text="Grado de necesidad: \(producto.gradoDeNecesidad)  Costo: \(producto.costo.description)"
+        
         //cell.textLabel?.text="hola"
         return cell
     }
@@ -71,17 +69,20 @@ class TableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            let id = manager.getProducto(at: indexPath.row).id
+            manager.delete(productoConID: id)
+            manager=ManagerProductos()
+            tableView.reloadData()
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.
@@ -98,14 +99,26 @@ class TableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if let productoSeleccionado = tableView.indexPathForSelectedRow,
+            let formulario = segue.destination as? FormularioViewController
+        {
+            formulario.producto = manager.getProducto(at: productoSeleccionado.row)
+            formulario.delegado = self
+        }
+            
+        else if let navContro = segue.destination as? UINavigationController,
+            let formularioNavControl = navContro.topViewController as? FormularioViewController
+        {
+            formularioNavControl.delegado = self
+        }
+        
     }
-    */
 
 }

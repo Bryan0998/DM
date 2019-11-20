@@ -132,7 +132,7 @@ class TableViewController: UITableViewController {
         if let maestroSeleccionado = tableView.indexPathForSelectedRow,
             let maestrosVC = segue.destination as? MaestrosViewController
         {
-            maestrosVC.maestros = manager.leerMaestro(at: maestroSeleccionado.row, seccion: maestroSeleccionado.section)
+            maestrosVC.maestro = manager.leerMaestro(at: maestroSeleccionado.row, seccion: maestroSeleccionado.section)
             maestrosVC.delegado = self
         }
             

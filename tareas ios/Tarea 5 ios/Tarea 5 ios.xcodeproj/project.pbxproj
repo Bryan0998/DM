@@ -17,6 +17,7 @@
 		C521A43F237B5459005BBF3A /* Producto.swift in Sources */ = {isa = PBXBuildFile; fileRef = C521A43E237B5459005BBF3A /* Producto.swift */; };
 		C521A441237B549F005BBF3A /* SQLiteDbStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C521A440237B549F005BBF3A /* SQLiteDbStore.swift */; };
 		C521A443237B54FB005BBF3A /* FormularioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C521A442237B54FB005BBF3A /* FormularioViewController.swift */; };
+		C56E9B9A2384A0D600F0B8AA /* ManagerProductos.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56E9B992384A0D600F0B8AA /* ManagerProductos.swift */; };
 		C57E71BD237CB04700DEA072 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57E71BC237CB04700DEA072 /* TableViewController.swift */; };
 		C5FA1810237DF30200458007 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FA1805237DF30100458007 /* FMDatabaseAdditions.m */; };
 		C5FA1811237DF30200458007 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FA1808237DF30100458007 /* FMDatabaseQueue.m */; };
@@ -40,6 +41,7 @@
 		C521A43E237B5459005BBF3A /* Producto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Producto.swift; sourceTree = "<group>"; };
 		C521A440237B549F005BBF3A /* SQLiteDbStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteDbStore.swift; sourceTree = "<group>"; };
 		C521A442237B54FB005BBF3A /* FormularioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormularioViewController.swift; sourceTree = "<group>"; };
+		C56E9B992384A0D600F0B8AA /* ManagerProductos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerProductos.swift; sourceTree = "<group>"; };
 		C57E71BC237CB04700DEA072 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		C5FA1805237DF30100458007 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseAdditions.m; path = Pods/FMDB/src/fmdb/FMDatabaseAdditions.m; sourceTree = SOURCE_ROOT; };
 		C5FA1806237DF30100458007 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabase.h; path = Pods/FMDB/src/fmdb/FMDatabase.h; sourceTree = SOURCE_ROOT; };
@@ -117,6 +119,7 @@
 				C521A440237B549F005BBF3A /* SQLiteDbStore.swift */,
 				C521A442237B54FB005BBF3A /* FormularioViewController.swift */,
 				C57E71BC237CB04700DEA072 /* TableViewController.swift */,
+				C56E9B992384A0D600F0B8AA /* ManagerProductos.swift */,
 			);
 			path = "Tarea 5 ios";
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C56E9B9A2384A0D600F0B8AA /* ManagerProductos.swift in Sources */,
 				C521A42F237B5348005BBF3A /* ViewController.swift in Sources */,
 				C521A43F237B5459005BBF3A /* Producto.swift in Sources */,
 				C521A443237B54FB005BBF3A /* FormularioViewController.swift in Sources */,

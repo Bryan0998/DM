@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AHq-Kz-5hI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AHq-Kz-5hI">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,22 +16,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CELLID" textLabel="nOL-MJ-n3y" style="IBUITableViewCellStyleDefault" id="Kjm-AF-Wi8">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CELLID" textLabel="nOL-MJ-n3y" detailTextLabel="tTF-Vk-Tyj" style="IBUITableViewCellStyleSubtitle" id="Kjm-AF-Wi8">
+                                <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kjm-AF-Wi8" id="hWF-GS-I8k">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="55.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nOL-MJ-n3y">
-                                            <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                            <rect key="frame" x="20" y="10" width="33.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tTF-Vk-Tyj">
+                                            <rect key="frame" x="20" y="31.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="oNn-J4-dae" kind="show" id="oLb-mM-Wtr"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -127,6 +137,9 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="Qrx-Xo-cyC" secondAttribute="height" multiplier="93:32" id="4pX-vL-s6N"/>
                                                         </constraints>
+                                                        <connections>
+                                                            <action selector="stepperValueChanged:" destination="oNn-J4-dae" eventType="valueChanged" id="Gxm-0Y-2uH"/>
+                                                        </connections>
                                                     </stepper>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GDc-2g-YJU">
                                                         <rect key="frame" x="101.5" y="0.0" width="11" height="32"/>
@@ -167,13 +180,6 @@
                                     <constraint firstAttribute="trailing" secondItem="Xtn-J2-2zX" secondAttribute="trailing" constant="20" id="xae-AX-7nK"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cVx-Gx-qh4">
-                                <rect key="frame" x="186" y="563" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -184,6 +190,11 @@
                         <viewLayoutGuide key="safeArea" id="Zhh-oa-4Yy"/>
                     </view>
                     <navigationItem key="navigationItem" id="at9-Oe-hwz">
+                        <barButtonItem key="leftBarButtonItem" title="Cancelar" id="6nY-th-KdN">
+                            <connections>
+                                <action selector="btnCancelar:" destination="oNn-J4-dae" id="tAv-hF-vE4"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Guardar" id="ATq-9N-KUY">
                             <connections>
                                 <action selector="btnGuardar:" destination="oNn-J4-dae" id="k4b-Ko-mAR"/>
@@ -191,8 +202,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="label" destination="cVx-Gx-qh4" id="Gki-gR-grF"/>
                         <outlet property="labelGrado" destination="GDc-2g-YJU" id="Y5r-ci-2XN"/>
+                        <outlet property="stepper" destination="Qrx-Xo-cyC" id="ECe-Zs-m22"/>
                         <outlet property="textCosto" destination="WPo-C9-a37" id="uNM-gI-G1M"/>
                         <outlet property="textExplicacion" destination="Pyt-69-suh" id="9Mz-uE-Eh5"/>
                         <outlet property="textNombre" destination="NMK-u8-1pa" id="A7Z-Ap-aZG"/>
@@ -241,4 +252,7 @@
             <point key="canvasLocation" x="739" y="-423"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="oLb-mM-Wtr"/>
+    </inferredMetricsTieBreakers>
 </document>
