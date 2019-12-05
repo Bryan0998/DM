@@ -6,6 +6,6 @@ target 'Tarea 6 ios' do
   use_frameworks!
 
   # Pods for Tarea 6 ios
-  pod 'Alamofire', '~> 5.0.0-rc.3'
-  pod 'SwiftyJSON', '~> 4.0'
+  pod 'Alamofire'
+  pod 'SwiftyJSON'
 end
