@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="landscape" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,11 +12,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Tarea_3_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contactos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xkx-0D-Ziy">
-                                <rect key="frame" x="0.0" y="44" width="414" height="40"/>
+                                <rect key="frame" x="44" y="0.0" width="808" height="40"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="DeU-dA-VWE"/>
@@ -26,94 +26,88 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dsj-4r-Hrb">
-                                <rect key="frame" x="0.0" y="84" width="414" height="778"/>
+                                <rect key="frame" x="44" y="40" width="808" height="328"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rar-MV-goG">
-                                        <rect key="frame" x="15" y="41" width="177" height="177.5"/>
-                                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contacto" translatesAutoresizingMaskIntoConstraints="NO" id="O7h-PE-wml">
+                                        <rect key="frame" x="66" y="181.5" width="132" height="119"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="177.5" id="3Ms-AB-Icd"/>
-                                            <constraint firstAttribute="width" constant="177" id="N7Y-Vj-xNf"/>
+                                            <constraint firstAttribute="height" constant="119" id="b3i-jw-h7c"/>
+                                            <constraint firstAttribute="width" constant="132" id="e1L-kr-0qj"/>
                                         </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oob-tr-Iwl">
-                                        <rect key="frame" x="15" y="301" width="177" height="177.5"/>
-                                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contacto2" translatesAutoresizingMaskIntoConstraints="NO" id="2TB-J9-dWJ">
+                                        <rect key="frame" x="317" y="182" width="132" height="119"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="177" id="Szs-lI-IFY"/>
-                                            <constraint firstAttribute="height" constant="177.5" id="vln-it-45t"/>
+                                            <constraint firstAttribute="height" constant="119" id="Fvu-K0-KRP"/>
+                                            <constraint firstAttribute="width" constant="132" id="Ktt-im-x8t"/>
                                         </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="otI-DW-HZh">
-                                        <rect key="frame" x="15" y="554" width="177" height="177.5"/>
-                                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contacto" translatesAutoresizingMaskIntoConstraints="NO" id="Rhu-jD-rNV">
+                                        <rect key="frame" x="568" y="182" width="132" height="119"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="177.5" id="3CG-AT-d9j"/>
-                                            <constraint firstAttribute="width" constant="177" id="bw0-9z-qSK"/>
+                                            <constraint firstAttribute="width" constant="132" id="SgR-9I-m69"/>
+                                            <constraint firstAttribute="height" constant="119" id="V0q-zZ-zfx"/>
                                         </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LFG-gj-1ak">
-                                        <rect key="frame" x="218" y="41" width="177" height="177.5"/>
-                                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contacto2" translatesAutoresizingMaskIntoConstraints="NO" id="23r-fX-g2d">
+                                        <rect key="frame" x="66" y="15" width="132" height="119"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="177" id="qlZ-Ui-vrO"/>
-                                            <constraint firstAttribute="height" constant="177.5" id="tW1-jB-xgd"/>
+                                            <constraint firstAttribute="width" constant="132" id="naH-O3-7hP"/>
+                                            <constraint firstAttribute="height" constant="119" id="rNz-aR-4zD"/>
                                         </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f34-hN-Mq7">
-                                        <rect key="frame" x="218" y="301" width="177" height="177.5"/>
-                                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contacto" translatesAutoresizingMaskIntoConstraints="NO" id="9I5-8h-egZ">
+                                        <rect key="frame" x="317" y="15" width="132" height="119"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="177" id="3Ae-p1-5be"/>
-                                            <constraint firstAttribute="height" constant="177.5" id="5YV-Mb-3hm"/>
+                                            <constraint firstAttribute="width" constant="132" id="0AJ-CM-JCP"/>
+                                            <constraint firstAttribute="height" constant="119" id="8zi-xl-jeB"/>
                                         </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OKX-XR-TmU">
-                                        <rect key="frame" x="218" y="554" width="177" height="177.5"/>
-                                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contacto2" translatesAutoresizingMaskIntoConstraints="NO" id="e3W-0F-hHb">
+                                        <rect key="frame" x="568" y="15" width="132" height="119"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="177" id="R9H-rb-anh"/>
-                                            <constraint firstAttribute="height" constant="177.5" id="pkn-vz-joC"/>
+                                            <constraint firstAttribute="width" constant="132" id="VG1-RC-33q"/>
+                                            <constraint firstAttribute="height" constant="119" id="j3y-gN-Pxm"/>
                                         </constraints>
-                                    </view>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstItem="LFG-gj-1ak" firstAttribute="leading" secondItem="dsj-4r-Hrb" secondAttribute="leading" constant="218" id="77O-HE-4rv">
-                                        <variation key="heightClass=compact-widthClass=regular" constant="41"/>
+                                    <constraint firstAttribute="bottom" secondItem="Rhu-jD-rNV" secondAttribute="bottom" constant="66" id="1O3-R3-d5n">
+                                        <variation key="heightClass=compact-widthClass=regular" constant="27"/>
                                     </constraint>
-                                    <constraint firstItem="OKX-XR-TmU" firstAttribute="top" secondItem="dsj-4r-Hrb" secondAttribute="top" constant="554" id="CZy-pz-NEf">
-                                        <variation key="heightClass=compact-widthClass=regular" constant="19"/>
+                                    <constraint firstItem="23r-fX-g2d" firstAttribute="leading" secondItem="dsj-4r-Hrb" secondAttribute="leading" constant="244.5" id="3eo-yE-7I9">
+                                        <variation key="heightClass=compact-widthClass=regular" constant="66"/>
                                     </constraint>
-                                    <constraint firstItem="OKX-XR-TmU" firstAttribute="leading" secondItem="dsj-4r-Hrb" secondAttribute="leading" constant="218" id="Jk4-M0-mG1">
-                                        <variation key="heightClass=compact-widthClass=regular" constant="554"/>
+                                    <constraint firstItem="2TB-J9-dWJ" firstAttribute="leading" secondItem="dsj-4r-Hrb" secondAttribute="leading" constant="37" id="EkO-na-636">
+                                        <variation key="heightClass=compact-widthClass=regular" constant="317"/>
                                     </constraint>
-                                    <constraint firstItem="Rar-MV-goG" firstAttribute="top" secondItem="dsj-4r-Hrb" secondAttribute="top" constant="41" id="ORH-AX-3nc">
-                                        <variation key="heightClass=compact-widthClass=regular" constant="222"/>
+                                    <constraint firstItem="Rhu-jD-rNV" firstAttribute="leading" secondItem="dsj-4r-Hrb" secondAttribute="leading" constant="37.5" id="MMr-yN-rh1">
+                                        <variation key="heightClass=compact-widthClass=regular" constant="568"/>
                                     </constraint>
-                                    <constraint firstItem="f34-hN-Mq7" firstAttribute="top" secondItem="dsj-4r-Hrb" secondAttribute="top" constant="301" id="Urr-dl-F4s">
-                                        <variation key="heightClass=compact-widthClass=regular" constant="19"/>
+                                    <constraint firstItem="O7h-PE-wml" firstAttribute="leading" secondItem="dsj-4r-Hrb" secondAttribute="leading" constant="37.5" id="NH5-bN-dOb">
+                                        <variation key="heightClass=compact-widthClass=regular" constant="66"/>
                                     </constraint>
-                                    <constraint firstItem="otI-DW-HZh" firstAttribute="top" secondItem="dsj-4r-Hrb" secondAttribute="top" constant="554" id="ZRW-mE-FXI">
-                                        <variation key="heightClass=compact-widthClass=regular" constant="222"/>
+                                    <constraint firstItem="e3W-0F-hHb" firstAttribute="leading" secondItem="dsj-4r-Hrb" secondAttribute="leading" constant="244" id="P8K-zM-Zei">
+                                        <variation key="heightClass=compact-widthClass=regular" constant="568"/>
                                     </constraint>
-                                    <constraint firstItem="otI-DW-HZh" firstAttribute="leading" secondItem="dsj-4r-Hrb" secondAttribute="leading" constant="15" id="bTq-Mk-D9p">
-                                        <variation key="heightClass=compact-widthClass=regular" constant="554"/>
+                                    <constraint firstAttribute="bottom" secondItem="2TB-J9-dWJ" secondAttribute="bottom" constant="317" id="T1S-eK-RQl">
+                                        <variation key="heightClass=compact-widthClass=regular" constant="27"/>
                                     </constraint>
-                                    <constraint firstItem="f34-hN-Mq7" firstAttribute="leading" secondItem="dsj-4r-Hrb" secondAttribute="leading" constant="218" id="cxx-bR-4bb">
-                                        <variation key="heightClass=compact-widthClass=regular" constant="301"/>
+                                    <constraint firstItem="9I5-8h-egZ" firstAttribute="leading" secondItem="dsj-4r-Hrb" secondAttribute="leading" constant="244" id="aKD-aq-QER">
+                                        <variation key="heightClass=compact-widthClass=regular" constant="317"/>
                                     </constraint>
-                                    <constraint firstItem="oob-tr-Iwl" firstAttribute="top" secondItem="dsj-4r-Hrb" secondAttribute="top" constant="301" id="q6b-YR-OJD">
-                                        <variation key="heightClass=compact-widthClass=regular" constant="222"/>
+                                    <constraint firstAttribute="bottom" secondItem="23r-fX-g2d" secondAttribute="bottom" constant="568" id="bm3-SA-AQE">
+                                        <variation key="heightClass=compact-widthClass=regular" constant="194"/>
                                     </constraint>
-                                    <constraint firstItem="oob-tr-Iwl" firstAttribute="leading" secondItem="dsj-4r-Hrb" secondAttribute="leading" constant="15" id="u1t-Lx-qYt">
-                                        <variation key="heightClass=compact-widthClass=regular" constant="301"/>
+                                    <constraint firstAttribute="bottom" secondItem="O7h-PE-wml" secondAttribute="bottom" constant="568" id="dsM-Pu-MVH">
+                                        <variation key="heightClass=compact-widthClass=regular" constant="27.5"/>
                                     </constraint>
-                                    <constraint firstItem="LFG-gj-1ak" firstAttribute="top" secondItem="dsj-4r-Hrb" secondAttribute="top" constant="41" id="v3m-Qk-Ru9">
-                                        <variation key="heightClass=compact-widthClass=regular" constant="19"/>
+                                    <constraint firstAttribute="bottom" secondItem="e3W-0F-hHb" secondAttribute="bottom" constant="66" id="sTK-LJ-FSh">
+                                        <variation key="heightClass=compact-widthClass=regular" constant="194"/>
                                     </constraint>
-                                    <constraint firstItem="Rar-MV-goG" firstAttribute="leading" secondItem="dsj-4r-Hrb" secondAttribute="leading" constant="15" id="vcx-uq-r0c">
-                                        <variation key="heightClass=compact-widthClass=regular" constant="41"/>
+                                    <constraint firstAttribute="bottom" secondItem="9I5-8h-egZ" secondAttribute="bottom" constant="317" id="wa4-m2-l2V">
+                                        <variation key="heightClass=compact-widthClass=regular" constant="194"/>
                                     </constraint>
                                 </constraints>
                             </view>
@@ -121,7 +115,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="dsj-4r-Hrb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CcQ-zj-liO"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dsj-4r-Hrb" secondAttribute="bottom" id="EPQ-Eb-iEr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dsj-4r-Hrb" secondAttribute="bottom" constant="25" id="EPQ-Eb-iEr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dsj-4r-Hrb" secondAttribute="trailing" id="JBn-RN-yxp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xkx-0D-Ziy" secondAttribute="trailing" id="Tet-nL-EX6"/>
                             <constraint firstItem="xkx-0D-Ziy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ZXw-IU-9fj"/>
@@ -133,7 +127,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="91" y="-636"/>
+            <point key="canvasLocation" x="-318.84057971014494" y="-628.79464285714278"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="contacto" width="225" height="225"/>
+        <image name="contacto2" width="225" height="225"/>
+    </resources>
 </document>

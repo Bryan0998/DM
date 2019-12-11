@@ -11,12 +11,12 @@ import UIKit
 class MaestrosViewController: UIViewController {
     
     var delegado: TableViewController?
-    var maestro: Maestro?
+    var maestros: Maestro?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let maestro = maestro {
+        if let maestro = maestros {
             textNombre.text = maestro.nombre
             sexo.selectedSegmentIndex = maestro.sexo == "Masculino" ? 0 : 1
             textGrado.text = maestro.grado

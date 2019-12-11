@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  Tarea 6 ios
 //
-//  Created by CCDM19 on 21/11/19.
-//  Copyright © 2019 Coppel. All rights reserved.
+//  Created by CCDM20 on 12/5/19.
+//  Copyright © 2019 empresa. All rights reserved.
 //
 
 import UIKit

@@ -72,8 +72,8 @@
 				C5829EDD2368D65300DAE619 /* LaunchScreen.storyboard */,
 				C5829EE02368D65300DAE619 /* Info.plist */,
 				C5829EE62368D76E00DAE619 /* Maestro.swift */,
-				C5829EEA2368DDAF00DAE619 /* MaestrosManager.swift */,
 				C5829EE82368DB0300DAE619 /* TableViewController.swift */,
+				C5829EEA2368DDAF00DAE619 /* MaestrosManager.swift */,
 				A994B8EE237341C1008DE70A /* MaestrosViewController.swift */,
 			);
 			path = "Tarea 4 ios";

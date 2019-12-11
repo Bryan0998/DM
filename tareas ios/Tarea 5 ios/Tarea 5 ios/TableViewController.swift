@@ -112,7 +112,6 @@ class TableViewController: UITableViewController {
             formulario.producto = manager.getProducto(at: productoSeleccionado.row)
             formulario.delegado = self
         }
-            
         else if let navContro = segue.destination as? UINavigationController,
             let formularioNavControl = navContro.topViewController as? FormularioViewController
         {

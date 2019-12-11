@@ -57,8 +57,16 @@ class MaestrosManager{
     func actualizaMaestro(at indice:Int,enFacultad seccion:Int,  with maestro: Maestro){
         let id=maestros(enFacultad: seccion)[indice].id
         for i in 0...(maestros.count-1){
-            if (maestros[i].id==id){
-                maestros[i]=maestro
+            if maestros[i].id==id{
+                
+                maestros[i].calificacion=maestro.calificacion
+                maestros[i].carreras=maestro.carreras
+                maestros[i].facultad=maestro.facultad
+                maestros[i].grado=maestro.grado
+                maestros[i].materias=maestro.materias
+                maestros[i].nombre=maestro.nombre
+                maestros[i].sexo=maestro.sexo
+                break
             }
         }
         
@@ -68,6 +76,7 @@ class MaestrosManager{
         for i in 0...(maestros.count-1){
             if (maestros[i].id==id){
                 maestros.remove(at: i)
+                break
             }
         }
     }
