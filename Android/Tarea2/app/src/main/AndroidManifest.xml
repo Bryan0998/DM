@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AltaVisitas"></activity>
+        <activity android:name=".listaVisitas"></activity>
+        <activity android:name=".AltaVisitas" />
         <activity android:name=".AltaLugarActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

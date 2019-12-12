@@ -38,12 +38,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
                 String nombre = (String) listView.getItemAtPosition(position);
-                idLugar=consultaID(nombre);
+                idLugar=consultaID(nombre.split(":")[0]);
                 editar(idLugar);
             }
         });
     }
-
 
     public void click(View view){
         Intent intent = new Intent(this,AltaLugarActivity.class);
@@ -70,11 +69,16 @@ public class MainActivity extends AppCompatActivity {
     public void leerArreglo(){
         AdminSQLiteOpenHelper admin = new  AdminSQLiteOpenHelper(this,"lugares",null,1);
         SQLiteDatabase db = admin.getWritableDatabase();
-        Cursor fila = db.rawQuery("select nombre from Lugar",null);
+        Cursor fila = db.rawQuery("select nombre,ubicacion,ultimaFecha from Lugar order by ultimaFecha desc",null);
 
         if (fila.moveToFirst()){
             do{
-                lugares.add(fila.getString(0));
+                String nombre = fila.getString(0);
+                String ubicacion = fila.getString(1);
+                String fecha = fila.getString(2);
+                String[] componentes = fecha.split("/");
+                String fecha2=componentes[2]+"/"+componentes[1]+"/"+componentes[0];
+                lugares.add(nombre+": "+ubicacion+" - "+fecha2);
             }while (fila.moveToNext());
         }
         db.close();
